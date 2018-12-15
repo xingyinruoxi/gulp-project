@@ -1,0 +1,29 @@
+@charset "utf-8";
+
+.clearfix {
+	*zoom: 1;
+}
+
+.clearfix:before,
+.clearfix:after {
+	display: table;
+	content: "";
+	line-height: 0;
+}
+
+.clearfix:after {
+	clear: both;
+}
+
+/*
+@link_color:#333333;
+@link_color_blue:#32A2D5;
+@link_hover:#FA7D3C;*/
+
+.box {
+	color: #ddd;
+}
+
+.box :hover {
+	background: #ddd;
+}
