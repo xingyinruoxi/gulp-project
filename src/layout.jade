@@ -1,0 +1,52 @@
+doctype html
+html(lang="zh-CN")
+  head
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible",content="IE=edge")
+    meta(name="renderer" content="webkit")
+    meta(name="viewport",content="width=device-width, initial-scale=0.2, maximum-scale=1, user-scalable=yes")
+    //上述4个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！
+    title= '国联资产'
+    meta(name="keywords",content="#")
+    meta(name="description",content="#")
+    meta(name="author",content="#")
+    link(rel='shortcut icon',href='/favicon.ico')
+    link(rel='stylesheet', href='css/stateunion-main.min.css')
+    <!--[if lt IE 9]>
+    <script src="/libs/html5shiv.min.js"></script>
+    <![endif]-->
+    block css
+  body
+      //头部
+      header#header
+        .container
+            .col-20
+                h1.hidden 哪吒车贷ertyu
+                a(href="/").logo 哪吒车贷
+            .col-80
+                nav.text-right
+                    -var navBar=curPage==='关于我们'?[{'title':'首页','href':'/'},{'title':'关于我们','href':'aboutus.html'}]:[{'title':'首页','href':'/'},{'title':'产品介绍','href':'javascript:;'},{'title':'我们的优势','href':'javascript:;'},{'title':'关于我们','href':'aboutus.html'}];
+                    each item,i in navBar
+                        a(href=item.href class=(curPage===item.title)?'active':'') #{item.title}
+                            if curPage===item.title
+                                i.ico.ico-fire
+      block content
+      footer#footer
+        .container
+            .row
+                .col-80
+                    -var links=[{'title':'关于我们','href':'aboutus.html'},{'title':'加入我们','href':'aboutus.html?join=1'},{'title':'联系我们','href':'javascript:;'}];
+                    .links
+                        each item,i in links
+                            a(href=item.href) #{item.title}
+                            unless i===links.length-1
+                                span |
+                    p.copyright  经营地址：北京市丰台科技园区汉威广场11号楼&emsp;©-2016 辽ICP备15015338号-1&emsp;版权所有：君石控股
+                .col-20
+                    div.hot-line
+                        span 企业服务热线：
+                        div.phone 010-88685678
+                        span 周一至周五&nbsp;9:00-18:00
+
+      script(src="/libs/jquery-1.9.1.min.js")
+      script(src="/js/stateunion-main.min.js")
