@@ -32,7 +32,7 @@ gulp.task('dev-css-min', function () {
             // we need a litle help identifying where it will be.
             'pathToSpriteSheetFromCSS': '../img/spritesheet.png' //这是在css引用的图片路径
         }))
-        .pipe($.concat('stateunion-main.css'))
+        .pipe($.concat('gw-main.css'))
         .pipe(gulp.dest('./dist/css'))
 
         .pipe($.rename({suffix: '.min'}))
@@ -71,7 +71,7 @@ gulp.task('dev-js-min', function () {
     console.log('dev-js-min');
     return gulp.src("./src/javascript/**/*.js")
         // .pipe(babel())
-        .pipe($.concat('stateunion-main.js'))
+        .pipe($.concat('gw-main.js'))
         .pipe(gulp.dest('./dist/js'))
         .pipe($.uglify({
             mangle: true,//类型：Boolean 默认：true 是否修改变量名
